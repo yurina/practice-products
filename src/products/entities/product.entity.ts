@@ -21,7 +21,7 @@ export class Product {
   price: number;
 
   @Column({ default: true })
-  isAvailable: boolean;
+  isActive: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
