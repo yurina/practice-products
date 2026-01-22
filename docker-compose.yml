@@ -11,5 +11,15 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  postgres_test:
+    image: postgres:13
+    container_name: practice_postgres_test
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: practice_test_db
+    ports:
+      - "5433:5432"
+
 volumes:
   pgdata:

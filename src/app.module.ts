@@ -16,6 +16,11 @@ import { ProductsModule } from './products/products.module';
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: false,
+
+      migrations:
+        process.env.NODE_ENV === 'test'
+          ? ['src/database/migrations/*.ts']
+          : ['dist/database/migrations/*.js'],
     }),
     ProductsModule,
   ],
